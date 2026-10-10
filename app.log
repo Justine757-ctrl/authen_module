@@ -1,0 +1,201 @@
+2026-09-09 18:01:46,115 [INFO] D�marrage du serveur sur http://localhost:8080
+2026-09-09 18:01:47,136 [INFO] ACC�S PROFIL : Utilisateur 'ben'.
+2026-09-09 18:01:47,191 [INFO] ACC�S PROFIL : Utilisateur 'ben'.
+2026-09-13 17:57:34,837 [INFO] D�marrage du serveur sur http://localhost:8080
+2026-09-13 17:58:12,793 [WARNING] ACC�S REFUS� /profile : Jeton invalide ou expir�.
+2026-09-13 17:58:28,085 [WARNING] �CHEC CONNEXION : Tentative manqu�e pour l'utilisateur 'ben.feda@tidd.africa' depuis 127.0.0.1
+2026-09-13 17:59:01,008 [INFO] INSCRIPTION R�USSIE : Utilisateur 'ben.feda@tidd.africa' cr�� avec succ�s.
+2026-09-13 17:59:26,494 [WARNING] �CHEC CONNEXION : Tentative manqu�e pour l'utilisateur 'justine14' depuis 127.0.0.1
+2026-09-13 17:59:36,259 [INFO] INSCRIPTION R�USSIE : Utilisateur 'justine14' cr�� avec succ�s.
+2026-09-13 17:59:57,270 [INFO] CONNEXION R�USSIE : Utilisateur 'justine14' connect�.
+2026-09-13 17:59:57,545 [INFO] ACC�S PROFIL : Utilisateur 'justine14'.
+2026-09-13 18:02:00,349 [INFO] ACC�S PROFIL : Utilisateur 'justine14'.
+2026-09-13 18:02:13,852 [INFO] ACC�S PROFIL : Utilisateur 'justine14'.
+2026-09-14 21:06:31,238 [INFO] INSCRIPTION R�USSIE : Utilisateur 'senafed' cr�� avec succ�s.
+2026-09-14 21:09:34,448 [INFO] CONNEXION R�USSIE : Utilisateur 'senafed' connect�.
+2026-09-14 21:09:34,965 [INFO] ACC�S PROFIL : Utilisateur 'senafed'.
+2026-09-14 21:11:37,311 [INFO] ACC�S PROFIL : Utilisateur 'senafed'.
+2026-09-14 21:11:45,376 [INFO] ACC�S PROFIL : Utilisateur 'senafed'.
+2026-09-23 21:36:03,712 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 21:36:20,119 [WARNING] ACCÈS REFUSÉ /profile : Token manquant [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:36:23,234 [INFO] 
+======================================================================
+2026-09-23 21:36:23,235 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 21:36:23,235 [INFO] Destinataire : test_1790199377@example.com (User: 'user_test_1790199377')
+2026-09-23 21:36:23,235 [INFO] Lien direct  : http://localhost:8080/activate?token=84mP1vRP8Z2ikIvV4oh0_B6ZEPNQN2pjgaRPS7_oR_k
+2026-09-23 21:36:23,236 [INFO] ======================================================================
+
+2026-09-23 21:36:23,236 [WARNING] Configuration SMTP Google incomplète (SMTP_USER ou SMTP_PASSWORD manquant dans .env). En mode dev, utilisez le lien d'activation : http://localhost:8080/activate?token=84mP1vRP8Z2ikIvV4oh0_B6ZEPNQN2pjgaRPS7_oR_k
+2026-09-23 21:36:23,236 [INFO] INSCRIPTION : User 'user_test_1790199377' (test_1790199377@example.com) créé. Statut email : Email simulé avec succès (voir la console pour le lien d'activation). [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:36:26,157 [WARNING] CONNEXION REFUSÉE (COMPTE NON ACTIVÉ) : 'user_test_1790199377' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:36:28,234 [INFO] ACTIVATION RÉUSSIE : User 'user_test_1790199377' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:36:30,270 [WARNING] ÉCHEC ACTIVATION (token invalide/expiré) [IP: 127.0.0.1 | Agent: Python-urllib/3.13] : Lien d'activation invalide ou déjà utilisé.
+2026-09-23 21:36:33,596 [INFO] CONNEXION RÉUSSIE : User 'user_test_1790199377' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:36:36,519 [INFO] CONNEXION RÉUSSIE : User 'user_test_1790199377' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:36:38,547 [INFO] ACCÈS PROFIL AUTORISÉ : User 'user_test_1790199377' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:42:59,510 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 21:46:44,444 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 21:54:44,733 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 21:55:03,694 [WARNING] ACCÈS REFUSÉ /profile : Token manquant [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:55:06,603 [INFO] 
+======================================================================
+2026-09-23 21:55:06,604 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 21:55:06,605 [INFO] Destinataire : test_1790200501@example.com (User: 'user_test_1790200501')
+2026-09-23 21:55:06,605 [INFO] Lien direct  : http://localhost:8080/activate?token=B72cTjpPV4lNHvl1NYVLO9lJabkhO9OKmamvIphQ0Mk
+2026-09-23 21:55:06,606 [INFO] ======================================================================
+
+2026-09-23 21:55:06,608 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 21:55:08,860 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 21:55:08,860 [INFO] INSCRIPTION : User 'user_test_1790200501' (test_1790200501@example.com) créé. Statut email : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=B72cTjpPV4lNHvl1NYVLO9lJabkhO9OKmamvIphQ0Mk [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:55:11,668 [WARNING] CONNEXION REFUSÉE (COMPTE NON ACTIVÉ) : 'user_test_1790200501' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:55:13,766 [INFO] ACTIVATION RÉUSSIE : User 'user_test_1790200501' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:55:15,782 [WARNING] ÉCHEC ACTIVATION (token invalide/expiré) [IP: 127.0.0.1 | Agent: Python-urllib/3.13] : Lien d'activation invalide ou déjà utilisé.
+2026-09-23 21:55:19,122 [INFO] CONNEXION RÉUSSIE : User 'user_test_1790200501' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:55:22,460 [INFO] CONNEXION RÉUSSIE : User 'user_test_1790200501' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:55:24,497 [INFO] ACCÈS PROFIL AUTORISÉ : User 'user_test_1790200501' [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:56:38,414 [INFO] 
+======================================================================
+2026-09-23 21:56:38,415 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 21:56:38,415 [INFO] Destinataire : justinefeda@gmail.com (User: 'test_final')
+2026-09-23 21:56:38,415 [INFO] Lien direct  : http://localhost:8080/activate?token=R8liGGnO3lX6xOD5me3JTqAZ6c-xMiihFeActk-UphM
+2026-09-23 21:56:38,416 [INFO] ======================================================================
+
+2026-09-23 21:56:38,416 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 21:56:40,727 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 21:56:40,727 [INFO] INSCRIPTION : User 'test_final' (justinefeda@gmail.com) créé. Statut email : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=R8liGGnO3lX6xOD5me3JTqAZ6c-xMiihFeActk-UphM [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 21:58:05,724 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 21:58:52,396 [INFO] 
+======================================================================
+2026-09-23 21:58:52,396 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 21:58:52,397 [INFO] Destinataire : kafuifeda@gmail.com (User: 'aziadipei')
+2026-09-23 21:58:52,397 [INFO] Lien direct  : http://localhost:8080/activate?token=P8dp0ek_hE2Bm-6ArZv9e3oYPQt-OvjxanHtCMCInoM
+2026-09-23 21:58:52,397 [INFO] ======================================================================
+
+2026-09-23 21:58:52,398 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 21:58:55,062 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 21:58:55,063 [INFO] INSCRIPTION : User 'aziadipei' (kafuifeda@gmail.com) créé. Statut email : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=P8dp0ek_hE2Bm-6ArZv9e3oYPQt-OvjxanHtCMCInoM [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-23 22:00:22,221 [INFO] Arrêt du serveur.
+2026-09-23 22:00:25,773 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 22:00:54,184 [WARNING] ÉCHEC INSCRIPTION [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36] : Cette adresse email est déjà enregistrée.
+2026-09-23 22:03:48,020 [INFO] Arrêt du serveur.
+2026-09-23 22:03:54,528 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 22:04:24,071 [INFO] 
+======================================================================
+2026-09-23 22:04:24,072 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 22:04:24,072 [INFO] Destinataire : kafuifeda@gmail.com (User: 'maxou')
+2026-09-23 22:04:24,072 [INFO] Lien direct  : http://localhost:8080/activate?token=cpEDJlC_Qx02gCHou_CWpeSkZRGIKlw3ZSyWNjzWC4g
+2026-09-23 22:04:24,073 [INFO] ======================================================================
+
+2026-09-23 22:04:24,083 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 22:04:26,112 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 22:04:26,113 [INFO] INSCRIPTION : User 'maxou' (kafuifeda@gmail.com) créé. Statut email : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=cpEDJlC_Qx02gCHou_CWpeSkZRGIKlw3ZSyWNjzWC4g [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-23 22:05:08,884 [WARNING] CONNEXION REFUSÉE (COMPTE NON ACTIVÉ) : 'maxou' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-23 22:05:15,787 [INFO] 
+======================================================================
+2026-09-23 22:05:15,787 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 22:05:15,788 [INFO] Destinataire : kafuifeda@gmail.com (User: 'maxou')
+2026-09-23 22:05:15,788 [INFO] Lien direct  : http://localhost:8080/activate?token=t57bLucUAXtPjhplX1ruc3F1lSeRoUG-zVrgoPeSo1w
+2026-09-23 22:05:15,789 [INFO] ======================================================================
+
+2026-09-23 22:05:15,792 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 22:05:18,265 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 22:05:18,273 [INFO] RENVOI EMAIL ACTIVATION pour 'maxou' (kafuifeda@gmail.com) : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=t57bLucUAXtPjhplX1ruc3F1lSeRoUG-zVrgoPeSo1w [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-23 22:36:09,353 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-23 22:38:52,005 [INFO] 
+======================================================================
+2026-09-23 22:38:52,020 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 22:38:52,021 [INFO] Destinataire : kafuifeda@gmail.com (User: 'maxou')
+2026-09-23 22:38:52,021 [INFO] Lien direct  : http://localhost:8080/activate?token=jTTwqbeiRA3XVT_d0TiPgvHLZcMR9cEBuFNkyzUVJiM
+2026-09-23 22:38:52,022 [INFO] ======================================================================
+
+2026-09-23 22:38:52,026 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 22:38:53,789 [ERROR] Erreur de connexion SMTP vers smtp.gmail.com:587 : Connection unexpectedly closed
+2026-09-23 22:38:53,791 [INFO] RENVOI EMAIL ACTIVATION pour 'maxou' (kafuifeda@gmail.com) : Serveur SMTP injoignable. Lien de test : http://localhost:8080/activate?token=jTTwqbeiRA3XVT_d0TiPgvHLZcMR9cEBuFNkyzUVJiM [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 22:40:55,677 [INFO] 
+======================================================================
+2026-09-23 22:40:55,680 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 22:40:55,681 [INFO] Destinataire : kafuifeda@gmail.com (User: 'maxou')
+2026-09-23 22:40:55,684 [INFO] Lien direct  : http://localhost:8080/activate?token=iOZ738v8YkDyGwQQ_dTIe3zjEjFO3Ii5m-LRGEPiTks
+2026-09-23 22:40:55,688 [INFO] ======================================================================
+
+2026-09-23 22:40:55,691 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 22:40:58,509 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 22:40:58,509 [INFO] RENVOI EMAIL ACTIVATION pour 'maxou' (kafuifeda@gmail.com) : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=iOZ738v8YkDyGwQQ_dTIe3zjEjFO3Ii5m-LRGEPiTks [IP: 127.0.0.1 | Agent: Python-urllib/3.13]
+2026-09-23 22:46:33,034 [WARNING] ÉCHEC INSCRIPTION [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36] : Ce nom d'utilisateur est déjà utilisé.
+2026-09-23 22:46:51,568 [WARNING] ÉCHEC INSCRIPTION [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36] : Cette adresse email est déjà enregistrée.
+2026-09-23 22:47:55,876 [INFO] 
+======================================================================
+2026-09-23 22:47:55,876 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION SIMULÉ
+2026-09-23 22:47:55,877 [INFO] Destinataire : justinefeda@gmail.com (User: 'AZIADIPE')
+2026-09-23 22:47:55,877 [INFO] Lien direct  : http://localhost:8080/activate?token=78LYJycYBdhRO26AgAV1KnEYOnbtxnKySODYmpK553M
+2026-09-23 22:47:55,878 [INFO] ======================================================================
+
+2026-09-23 22:47:55,879 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-23 22:47:58,246 [ERROR] ÉCHEC D'AUTHENTIFICATION GOOGLE (Erreur 535) :
+Google a refusé la connexion. Veuillez vous assurer que :
+1. La 'Validation en deux étapes' (2FA) est ACTIVÉE sur votre compte Google.
+2. Vous utilisez un 'Mot de passe d'application' de 16 caractères généré sur https://myaccount.google.com/apppasswords et NON votre mot de passe Gmail usuel.
+3. L'adresse configurée (justinefeda@gmail.com) correspond bien au compte Google.
+2026-09-23 22:47:58,248 [INFO] INSCRIPTION : User 'AZIADIPE' (justinefeda@gmail.com) créé. Statut email : Google a rejeté le mot de passe SMTP (Erreur 535). Utilisez le lien de test en console : http://localhost:8080/activate?token=78LYJycYBdhRO26AgAV1KnEYOnbtxnKySODYmpK553M [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-23 22:52:48,635 [WARNING] ÉCHEC ACTIVATION (token invalide/expiré) [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36] : Lien d'activation invalide ou déjà utilisé.
+2026-09-23 22:52:49,996 [WARNING] CONNEXION REFUSÉE (COMPTE NON ACTIVÉ) : 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-23 22:52:49,998 [ERROR] ROUTE INCONNUE : GET /favicon.ico [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-24 09:52:44,292 [WARNING] ÉCHEC ACTIVATION (token invalide/expiré) [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36] : Lien d'activation invalide ou déjà utilisé.
+2026-09-24 22:36:25,246 [WARNING] ÉCHEC ACTIVATION (token invalide/expiré) [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36] : Lien d'activation invalide ou déjà utilisé.
+2026-09-25 23:25:35,463 [INFO] Arrêt du serveur.
+2026-09-25 23:25:44,078 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-09-25 23:29:11,553 [INFO] 
+======================================================================
+2026-09-25 23:29:11,554 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION
+2026-09-25 23:29:11,554 [INFO] Destinataire : xavierpignan@gmail.com (User: 'xavier')
+2026-09-25 23:29:11,554 [INFO] Lien direct  : http://localhost:8080/activate?token=4Eevvy4H5DAYmZb11yw27OEBCY_ciaIl-ZQyl74mJdM
+2026-09-25 23:29:11,555 [INFO] ======================================================================
+
+2026-09-25 23:29:11,558 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-25 23:29:15,468 [INFO] EMAIL ENVOYÉ AVEC SUCCÈS à xavierpignan@gmail.com via Google SMTP (Port 587) !
+2026-09-25 23:29:15,468 [INFO] INSCRIPTION : User 'xavier' (xavierpignan@gmail.com) créé. Statut email : Email d'activation envoyé avec succès. [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:34:48,609 [WARNING] CONNEXION REFUSÉE (COMPTE NON ACTIVÉ) : 'aziadipe' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:39:03,259 [WARNING] CONNEXION REFUSÉE (COMPTE NON ACTIVÉ) : 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:39:06,655 [INFO] 
+======================================================================
+2026-09-25 23:39:06,655 [INFO] [DEVELOPPEMENT] EMAIL D'ACTIVATION
+2026-09-25 23:39:06,656 [INFO] Destinataire : justinefeda@gmail.com (User: 'AZIADIPE')
+2026-09-25 23:39:06,656 [INFO] Lien direct  : http://localhost:8080/activate?token=-A3kKe1D1dgKh69ZCEJIB_GpeVn9jTrurDtjrN_fZtM
+2026-09-25 23:39:06,656 [INFO] ======================================================================
+
+2026-09-25 23:39:06,657 [INFO] Connexion au serveur SMTP smtp.gmail.com:587...
+2026-09-25 23:39:10,290 [INFO] EMAIL ENVOYÉ AVEC SUCCÈS à justinefeda@gmail.com via Google SMTP (Port 587) !
+2026-09-25 23:39:10,291 [INFO] RENVOI EMAIL ACTIVATION pour 'AZIADIPE' (justinefeda@gmail.com) : Email d'activation envoyé avec succès. [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:41:30,584 [INFO] ACTIVATION RÉUSSIE : User 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:41:30,715 [ERROR] ROUTE INCONNUE : GET /favicon.ico [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:43:39,560 [INFO] CONNEXION RÉUSSIE : User 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-09-25 23:43:40,082 [INFO] ACCÈS PROFIL AUTORISÉ : User 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36]
+2026-10-10 08:54:37,436 [INFO] Démarrage du serveur d'authentification sur http://localhost:8080
+2026-10-10 08:57:11,838 [WARNING] ÉCHEC CONNEXION : Identifiants faux pour 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36]
+2026-10-10 08:57:29,487 [INFO] CONNEXION RÉUSSIE : User 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36]
+2026-10-10 08:57:30,011 [INFO] ACCÈS PROFIL AUTORISÉ : User 'AZIADIPE' [IP: 127.0.0.1 | Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36]
+2026-10-10 08:58:21,235 [INFO] Arrêt du serveur.

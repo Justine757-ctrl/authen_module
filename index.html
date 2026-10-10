@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentification Sécurisée - Connexion & Inscription</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7042c5;
+      --primary-hover: #6034b3;
+      --primary-light: #f2edfb;
+      --accent: #7042c5;
+      --bg-gradient: #f6f7f9;
+      --card-bg: #ffffff;
+      --text: #202124;
+      --text-muted: #70757a;
+      --border: #d5d9e0;
+      --error-bg: #fef2f2;
+      --error-text: #b91c1c;
+      --error-border: #fecaca;
+      --success-bg: #ecfdf5;
+      --success-text: #047857;
+      --success-border: #a7f3d0;
+      --warning-bg: #fffbeb;
+      --warning-text: #b45309;
+      --warning-border: #fde68a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    .container {
+      background: var(--card-bg);
+      padding: 2.1rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(25, 30, 40, 0.08);
+      width: 100%;
+      max-width: 496px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 6px 12px;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+
+    #auth-box > .brand-badge,
+    .subtitle {
+      display: none;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 1.35rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.15rem;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #334155;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      background: #ffffff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(112, 66, 197, 0.14);
+    }
+
+    .password-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    button.btn-primary {
+      width: 100%;
+      padding: 0.82rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      margin-top: 0.5rem;
+    }
+
+    button.btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(80, 45, 145, 0.2);
+    }
+
+    button.btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .switch-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--primary);
+      margin-top: 1.05rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .switch-btn:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    /* Boîte de message / alertes */
+    #message-box {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .msg-error {
+      background: var(--error-bg);
+      color: var(--error-text);
+      border: 1px solid var(--error-border);
+      display: block !important;
+    }
+
+    .msg-success {
+      background: var(--success-bg);
+      color: var(--success-text);
+      border: 1px solid var(--success-border);
+      display: block !important;
+    }
+
+    .msg-warning {
+      background: var(--warning-bg);
+      color: var(--warning-text);
+      border: 1px solid var(--warning-border);
+      display: block !important;
+    }
+
+    .resend-action {
+      margin-top: 0.75rem;
+    }
+
+    .btn-resend {
+      background: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-resend:hover {
+      background: #d97706;
+    }
+
+    /* Espace connecté */
+    .profile-card {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 auto 1.25rem auto;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    .welcome-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background: var(--success-bg);
+      color: var(--success-text);
+      border: 1px solid var(--success-border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .session-timer {
+      margin: 0 auto 1.5rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .session-timer strong {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .btn-logout {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      width: 100%;
+    }
+
+    .btn-logout:hover {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 1rem;
+      }
+
+      .container {
+        padding: 1.75rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Formulaire Authentification -->
+    <div id="auth-box">
+      <div class="brand-badge">SecurAuth 2026</div>
+      <h2 id="form-title">Connexion</h2>
+      <p class="subtitle" id="form-subtitle">Connectez-vous à votre espace personnel.</p>
+
+      <form id="auth-form" autocomplete="on">
+        <div class="form-group">
+          <label for="username" id="username-label">Nom d'utilisateur ou Email</label>
+          <input type="text" id="username" placeholder="ex: jean_dupont ou jean@gmail.com" required>
+        </div>
+
+        <!-- Champ Email (Visible uniquement en mode Inscription) -->
+        <div class="form-group hidden" id="email-group">
+          <label for="email">Adresse Email (pour activation)</label>
+          <input type="email" id="email" placeholder="ex: votre-adresse@gmail.com">
+          <div class="password-hint">Un lien de confirmation y sera expédié.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+          <div class="password-hint" id="password-hint" style="display: none;">Au moins 6 caractères recommandés.</div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submit-btn">Se connecter</button>
+      </form>
+
+      <button type="button" class="switch-btn" id="switch-mode">Pas encore de compte ? S'inscrire</button>
+    </div>
+
+    <!-- Zone Profil Protégée -->
+    <div id="profile-box" class="profile-card hidden">
+      <div class="avatar" id="user-avatar">U</div>
+      <h3 class="welcome-text" id="profile-message">Bienvenue !</h3>
+      <span class="status-badge">&#10003; Compte Vérifié & Sécurisé</span>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Vous êtes connecté avec un jeton de session chiffré (HMAC-SHA256).
+      </p>
+      <div class="session-timer" role="timer" aria-live="off">
+        Temps de session restant
+        <strong id="session-countdown">--:--:--</strong>
+      </div>
+      <button class="btn-logout" id="logout-btn">Se déconnecter</button>
+    </div>
+
+    <!-- Affichage des alertes et notifications -->
+    <div id="message-box"></div>
+  </div>
+
+  <script>
+    // Détection de l'URL du serveur backend Python :
+    // - Si la page est déjà servie depuis le serveur Python (port 8080), on utilise son origine.
+    // - Si elle est ouverte avec Live Server (ex: port 5500) ou en local (file://), on cible http://localhost:8080.
+    const API_URL = (window.location.protocol.startsWith('http') && window.location.port === '8080')
+      ? window.location.origin
+      : 'http://localhost:8080';
+
+    let isLoginMode = true;
+    let dernierIdentifiantInactif = '';
+    let sessionCountdownInterval = null;
+
+    // Helper sécurisé pour extraire le JSON sans provoquer "Unexpected end of JSON input"
+    async function lireReponseJson(response) {
+      const texte = await response.text();
+      if (!texte || !texte.trim()) {
+        if (!response.ok) {
+          throw new Error(`Erreur serveur (${response.status} ${response.statusText || ''})`);
+        }
+        return {};
+      }
+      try {
+        return JSON.parse(texte);
+      } catch (err) {
+        if (!response.ok) {
+          throw new Error(`Erreur serveur (${response.status}) : ${texte.slice(0, 120)}`);
+        }
+        throw new Error(`Format de réponse invalide reçu du serveur : ${texte.slice(0, 120)}`);
+      }
+    }
+
+    // Éléments du DOM
+    const authBox = document.getElementById('auth-box');
+    const profileBox = document.getElementById('profile-box');
+    const authForm = document.getElementById('auth-form');
+    const formTitle = document.getElementById('form-title');
+    const formSubtitle = document.getElementById('form-subtitle');
+    const usernameLabel = document.getElementById('username-label');
+    const usernameInput = document.getElementById('username');
+    const emailGroup = document.getElementById('email-group');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const passwordHint = document.getElementById('password-hint');
+    const submitBtn = document.getElementById('submit-btn');
+    const switchBtn = document.getElementById('switch-mode');
+    const messageBox = document.getElementById('message-box');
+    const userAvatar = document.getElementById('user-avatar');
+    const sessionCountdown = document.getElementById('session-countdown');
+
+    // Vérifier les paramètres d'URL (ex: suite à un clic sur le lien d'activation)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('activated') === '1') {
+      afficherMessage('🎉 Votre compte a été activé avec succès ! Vous pouvez maintenant vous connecter.', 'msg-success');
+    }
+
+    // Basculer entre Connexion et Inscription
+    switchBtn.addEventListener('click', () => {
+      isLoginMode = !isLoginMode;
+      effacerMessage();
+
+      if (isLoginMode) {
+        formTitle.textContent = 'Connexion';
+        formSubtitle.textContent = 'Connectez-vous à votre espace personnel.';
+        usernameLabel.textContent = "Nom d'utilisateur ou Email";
+        usernameInput.placeholder = "ex: jean_dupont ou jean@gmail.com";
+        emailGroup.classList.add('hidden');
+        emailInput.required = false;
+        passwordHint.style.display = 'none';
+        submitBtn.textContent = 'Se connecter';
+        switchBtn.textContent = "Pas encore de compte ? S'inscrire";
+      } else {
+        formTitle.textContent = 'Inscription';
+        formSubtitle.textContent = 'Créez votre compte sécurisé avec activation email.';
+        usernameLabel.textContent = "Nom d'utilisateur";
+        usernameInput.placeholder = "ex: jean_dupont";
+        emailGroup.classList.remove('hidden');
+        emailInput.required = true;
+        passwordHint.style.display = 'block';
+        submitBtn.textContent = "S'inscrire";
+        switchBtn.textContent = "Déjà inscrit ? Se connecter";
+      }
+    });
+
+    // Soumission du formulaire
+    authForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      effacerMessage();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Traitement en cours...';
+
+      const nom_utilisateur = usernameInput.value.trim();
+      const mot_de_passe = passwordInput.value;
+      const endpoint = isLoginMode ? '/login' : '/register';
+
+      const payload = { nom_utilisateur, mot_de_passe };
+      if (!isLoginMode) {
+        payload.email = emailInput.value.trim();
+      }
+
+      try {
+        const response = await fetch(`${API_URL}${endpoint}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await lireReponseJson(response);
+
+        if (response.status === 403 && data.inactif) {
+          // Compte non activé
+          dernierIdentifiantInactif = nom_utilisateur;
+          afficherAlerteCompteInactif(data.erreur);
+          return;
+        }
+
+        if (!response.ok) {
+          throw new Error(data.erreur || `Erreur (${response.status})`);
+        }
+
+        if (isLoginMode) {
+          // Connexion réussie
+          localStorage.setItem('bearer_token', data.token);
+          localStorage.setItem('current_user', data.nom_utilisateur || nom_utilisateur);
+          afficherMessage('Connexion réussie ! Chargement...', 'msg-success');
+          setTimeout(chargerProfil, 500);
+        } else {
+          // Inscription réussie
+          afficherMessage(
+            `✉️ ${data.message}`,
+            'msg-success'
+          );
+          // Réinitialiser les champs et basculer sur le login
+          setTimeout(() => {
+            switchBtn.click();
+            usernameInput.value = nom_utilisateur;
+            passwordInput.value = '';
+          }, 3000);
+        }
+      } catch (err) {
+        let msg = err.message;
+        if (msg.includes('Failed to fetch') || msg.includes('NetworkError') || msg.includes('Load failed')) {
+          msg = "Serveur d'authentification injoignable (http://localhost:8080). Assurez-vous d'avoir lancé le serveur Python : 'python serveur/routeur.py'.";
+        }
+        afficherMessage(msg, 'msg-error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = isLoginMode ? 'Se connecter' : "S'inscrire";
+      }
+    });
+
+    // Gestion de l'alerte pour compte inactif avec bouton de renvoi
+    function afficherAlerteCompteInactif(message) {
+      messageBox.innerHTML = `
+        <div><strong>Compte en attente d'activation :</strong></div>
+        <div style="margin-top: 4px;">${message}</div>
+        <div class="resend-action">
+          <button type="button" class="btn-resend" onclick="renvoyerActivation()">
+            Renvoyer l'email d'activation
+          </button>
+        </div>
+      `;
+      messageBox.className = 'msg-warning';
+    }
+
+    // Renvoyer l'email d'activation
+    window.renvoyerActivation = async function() {
+      if (!dernierIdentifiantInactif) {
+        dernierIdentifiantInactif = usernameInput.value.trim();
+      }
+      if (!dernierIdentifiantInactif) {
+        afficherMessage("Veuillez renseigner votre nom d'utilisateur ou email.", 'msg-error');
+        return;
+      }
+
+      effacerMessage();
+      afficherMessage("Envoi du nouvel email d'activation...", 'msg-warning');
+
+      try {
+        const response = await fetch(`${API_URL}/resend-activation`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
+          body: JSON.stringify({ identifiant: dernierIdentifiantInactif })
+        });
+        const data = await lireReponseJson(response);
+        if (response.ok) {
+          afficherMessage(`✓ ${data.message}`, 'msg-success');
+        } else {
+          afficherMessage(data.erreur || "Impossible de renvoyer l'email.", 'msg-error');
+        }
+      } catch (e) {
+        afficherMessage("Erreur de connexion au serveur d'authentification.", 'msg-error');
+      }
+    };
+
+    // Chargement du profil
+    async function chargerProfil() {
+      const token = localStorage.getItem('bearer_token');
+      if (!token) return;
+
+      try {
+        const response = await fetch(`${API_URL}/profile`, {
+          method: 'GET',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const data = await lireReponseJson(response);
+
+        if (response.ok) {
+          const user = localStorage.getItem('current_user') || 'Utilisateur';
+          userAvatar.textContent = user.charAt(0).toUpperCase();
+          document.getElementById('profile-message').textContent = data.message;
+          authBox.classList.add('hidden');
+          profileBox.classList.remove('hidden');
+          demarrerCompteARebours(token);
+          effacerMessage();
+        } else {
+          deconnexion();
+        }
+      } catch (err) {
+        afficherMessage("Impossible de communiquer avec le serveur.", 'msg-error');
+      }
+    }
+
+    function demarrerCompteARebours(token) {
+      if (sessionCountdownInterval) {
+        clearInterval(sessionCountdownInterval);
+      }
+
+      try {
+        const partiePayload = token.split('.')[0];
+        const payloadBase64 = partiePayload.replace(/-/g, '+').replace(/_/g, '/');
+        const payloadDecode = atob(payloadBase64.padEnd(Math.ceil(payloadBase64.length / 4) * 4, '='));
+        const expiration = JSON.parse(payloadDecode).expiration * 1000;
+
+        function actualiserCompteARebours() {
+          const secondesRestantes = Math.max(0, Math.floor((expiration - Date.now()) / 1000));
+          const heures = String(Math.floor(secondesRestantes / 3600)).padStart(2, '0');
+          const minutes = String(Math.floor((secondesRestantes % 3600) / 60)).padStart(2, '0');
+          const secondes = String(secondesRestantes % 60).padStart(2, '0');
+          sessionCountdown.textContent = `${heures}:${minutes}:${secondes}`;
+
+          if (secondesRestantes === 0) {
+            clearInterval(sessionCountdownInterval);
+            sessionCountdownInterval = null;
+          }
+        }
+
+        actualiserCompteARebours();
+        sessionCountdownInterval = setInterval(actualiserCompteARebours, 1000);
+      } catch (err) {
+        sessionCountdown.textContent = '--:--:--';
+      }
+    }
+
+    // Déconnexion
+    document.getElementById('logout-btn').addEventListener('click', deconnexion);
+
+    function deconnexion() {
+      if (sessionCountdownInterval) {
+        clearInterval(sessionCountdownInterval);
+        sessionCountdownInterval = null;
+      }
+      localStorage.removeItem('bearer_token');
+      localStorage.removeItem('current_user');
+      authBox.classList.remove('hidden');
+      profileBox.classList.add('hidden');
+      effacerMessage();
+    }
+
+    function afficherMessage(txt, typeClass) {
+      messageBox.textContent = txt;
+      messageBox.className = typeClass;
+    }
+
+    function effacerMessage() {
+      messageBox.textContent = '';
+      messageBox.className = '';
+    }
+
+    // Initialisation au chargement
+    chargerProfil();
+  </script>
+</body>
+</html>

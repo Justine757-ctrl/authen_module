@@ -1,0 +1,44 @@
+### 1. Inscription d'un nouvel utilisateur (avec email pour activation)
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "nom_utilisateur": "justine_test",
+  "email": "justine@example.com",
+  "mot_de_passe": "MonSuperMotDePasse2026!"
+}
+
+### 2. Tentative de connexion avant activation (Retourne 403 - Compte inactif)
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "nom_utilisateur": "justine_test",
+  "mot_de_passe": "MonSuperMotDePasse2026!"
+}
+
+### 3. Renvoyer l'email d'activation
+POST http://localhost:8080/resend-activation
+Content-Type: application/json
+
+{
+  "identifiant": "justine@example.com"
+}
+
+### 4. Activation du compte via le token reçu
+# Remplacez le token ci-dessous par celui reçu par email ou affiché en console
+GET http://localhost:8080/activate?token=VOTRE_TOKEN_ICI
+
+### 5. Connexion après activation (Retourne 200 + Bearer token)
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "nom_utilisateur": "justine_test",
+  "mot_de_passe": "MonSuperMotDePasse2026!"
+}
+
+### 6. Accès au profil protégé avec le token JWT/HMAC
+# Remplacez VOTRE_TOKEN_SESSION par le token obtenu à l'étape 5
+GET http://localhost:8080/profile
+Authorization: Bearer VOTRE_TOKEN_SESSION
